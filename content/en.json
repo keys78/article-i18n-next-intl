@@ -1,0 +1,6 @@
+{
+  "Index": {
+    "title": "Internationalization(i18n) in Next.js 14",
+    "description": "Next.js 14 introduces enhanced internationalization (i18n) features, empowering developers to effortlessly manage translations, locale-based routing, and content localization for globally accessible web applications. <br /> <br />This also piggy-backs built-in support for multiple locales, dynamic content loading, and robust fallback handling."
+  }
+}
