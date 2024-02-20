@@ -4,7 +4,8 @@ import gbFlag from "../assets/img/bg_flag.png";
 import geFlag from "../assets/img/german_flag.png";
 import esFlag from "../assets/img/spain_flag.png";
 import { StaticImageData } from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const LangSwitcher: React.FC = () => {
   interface Option {
@@ -14,13 +15,9 @@ const LangSwitcher: React.FC = () => {
   }
 
   const router = useRouter();
+  const pathname = usePathname();
 
   const [isOptionsExpanded, setIsOptionsExpanded] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<Option>({
-    country: "English",
-    code: "en",
-    flag: gbFlag,
-  });
 
   const options: Option[] = [
     { country: "English", code: "en", flag: gbFlag },
@@ -29,7 +26,6 @@ const LangSwitcher: React.FC = () => {
   ];
 
   const setOption = (option: Option) => {
-    setSelectedOption(option);
     setIsOptionsExpanded(false);
     router.push(`/${option.code}`);
   };
@@ -38,19 +34,11 @@ const LangSwitcher: React.FC = () => {
     <div className="flex items-center justify-center bg-gray-100">
       <div className="relative text-lg w-48">
         <button
-          className="flex items-center justify-between px-3 py-2 bg-white w-full border border-gray-500 rounded-lg text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className=" justify-between w-full border border-gray-500 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           onClick={() => setIsOptionsExpanded(!isOptionsExpanded)}
           onBlur={() => setIsOptionsExpanded(false)}
         >
-          <span className="flex items-center space-x-5">
-            <Image
-              src={selectedOption?.flag}
-              width={"20"}
-              height={"20"}
-              alt=""
-            />&nbsp;&nbsp;
-            {selectedOption.country}
-          </span>
+          Select Language
           <svg
             fill="none"
             viewBox="0 0 24 24"
@@ -90,8 +78,24 @@ const LangSwitcher: React.FC = () => {
                   width={"20"}
                   height={"20"}
                   alt="logo"
-                />&nbsp;&nbsp;
-                {option.country}
+                />
+                &nbsp;&nbsp;{option.country}
+                {pathname === `/${option.code}` && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-7 h-7 text-green-500 ml-auto"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={3}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                )}
               </li>
             ))}
           </ul>
