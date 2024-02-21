@@ -21,7 +21,7 @@ const LangSwitcher: React.FC = () => {
 
   const options: Option[] = [
     { country: "English", code: "en", flag: gbFlag },
-    { country: "German", code: "de", flag: geFlag },
+    { country: "Deutsch", code: "de", flag: geFlag },
     { country: "Spanish", code: "es", flag: esFlag },
   ];
 

@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../../globals.css";
 
-// Define a type alias for the shape of the object returned by Inter
 type FontObject = {
   className: string;
 };
 
-// Use the type alias to annotate the inter variable
 const inter: FontObject = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,7 +16,7 @@ export const metadata: Metadata = {
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  locale: string;
+  locale: never;
 }
 
 export default function RootLayout({ children, locale }: RootLayoutProps) {
