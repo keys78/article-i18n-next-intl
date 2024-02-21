@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import gbFlag from "../assets/img/bg_flag.png";
-import geFlag from "../assets/img/german_flag.png";
-import esFlag from "../assets/img/spain_flag.png";
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import gbFlag from "../assets/img/bg_flag.png";
+import geFlag from "../assets/img/german_flag.png";
+import esFlag from "../assets/img/spain_flag.png";
+import svFlag from "../assets/img/swedish_flag.png";
+import nlFlag from "../assets/img/neth_flag.png";
 
 const LangSwitcher: React.FC = () => {
   interface Option {
@@ -23,6 +25,8 @@ const LangSwitcher: React.FC = () => {
     { country: "English", code: "en", flag: gbFlag },
     { country: "Deutsch", code: "de", flag: geFlag },
     { country: "Spanish", code: "es", flag: esFlag },
+    { country: "Swedish", code: "sv", flag: svFlag },
+    { country: "Dutch", code: "nl", flag: nlFlag },
   ];
 
   const setOption = (option: Option) => {

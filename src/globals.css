@@ -24,6 +24,7 @@
 .animate.pop {
   animation-name: animate-pop;
   animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
+  animation-duration: 0.2s;
 }
 
 @keyframes animate-pop {
@@ -40,9 +41,9 @@
 
 
 .delay-1 {
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
     
 .delay-2 {
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
 }

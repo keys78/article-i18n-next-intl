@@ -1,0 +1,12 @@
+{
+    "Home": {
+      "navigation": {
+        "home": "Thuis",
+        "about": "Over",
+        "contact": "Neem contact op"
+      },
+      "title": "Internationalisatie (i18n) in Next.js 14",
+      "description": "Next.js 14 introduceert verbeterde internationaliseringsfuncties (i18n), waardoor ontwikkelaars eenvoudig vertalingen, op locale gebaseerde navigatie en inhoudslokalisatie kunnen beheren voor wereldwijd toegankelijke webapplicaties. <br /> <br /> Dit omvat ook ingebouwde ondersteuning voor meerdere talen, dynamische inhoudslading en robuuste fallback-behandeling."
+    }
+  }
+  
